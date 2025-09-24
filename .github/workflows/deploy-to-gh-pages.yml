@@ -1,43 +1,55 @@
 name: Deploy to GitHub Pages
 
 on:
+  # Déclenchement à chaque push sur la branche main
   push:
-    branches: [ main ]  # Déclencher uniquement sur les push vers la branche main
-  workflow_dispatch:    # Permettre également le déclenchement manuel du workflow
+    branches: [ main ]
+  
+  # Permettre le déclenchement manuel du workflow
+  workflow_dispatch:
 
 # Définir les permissions nécessaires pour le déploiement sur GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
-# Définir un environnement unique pour le déploiement
+# Éviter les déploiements simultanés
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
+  # Job pour construire et déployer
   build-and-deploy:
+    runs-on: ubuntu-latest
+    
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    
     steps:
-      # Étape 1: Récupérer le code source
-      - name: Checkout Repository
+      # Récupérer le code source
+      - name: Checkout repository
         uses: actions/checkout@v3
       
-      # Étape 2: Configurer les pages GitHub
+      # Configurer GitHub Pages
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v3
-
-      # Étape 3: Upload les fichiers pour GitHub Pages
-      - name: Upload artifact
+      
+      # Pas besoin d'étape de build, projet HTML/CSS/JS simple
+      
+      # Créer l'artefact de déploiement
+      - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: '.'  # Utiliser le répertoire racine qui contient index.html et tous les autres fichiers
-
-      # Étape 4: Déployer sur GitHub Pages
+          path: '.'  # Utiliser le dossier racine
+      
+      # Déployer sur GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+      
+      # Afficher l'URL du site déployé
+      - name: Display deployed URL
+        run: echo "🚀 Your site is deployed at ${{ steps.deployment.outputs.page_url }}"
