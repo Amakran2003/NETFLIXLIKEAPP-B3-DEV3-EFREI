@@ -1,1 +1,0 @@
-// Main JavaScript functionality for the index page
