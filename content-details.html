@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StreamFlix - Détails du contenu">
+    <meta name="theme-color" content="#141414">
+    <title>Titre du contenu - StreamFlix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js" defer></script>
+    <script src="content-details.js" defer></script>
+</head>
+<body>
+    <!-- HEADER
+    ========================================================================== -->
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">StreamFlix</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#">Séries TV</a></li>
+                <li><a href="#">Films</a></li>
+                <li><a href="#">Ma liste</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="search-container">
+                    <input type="checkbox" id="search-toggle" class="search-toggle">
+                    <label for="search-toggle" class="search-btn" aria-label="Recherche"><i class="fas fa-search" aria-hidden="true"></i></label>
+                    <form class="search-form" id="search-form">
+                        <div class="search-icon-left"><i class="fas fa-search" aria-hidden="true"></i></div>
+                        <input type="text" class="search-input" placeholder="Titre, Personne, genres" aria-label="Rechercher un film ou une série">
+                        <label for="search-toggle" class="search-close" aria-label="Fermer"><i class="fas fa-times" aria-hidden="true"></i></label>
+                    </form>
+                </div>
+                <a href="#" aria-label="Notifications"><i class="fas fa-bell" aria-hidden="true"></i></a>
+                <div class="profile-container">
+                    <a href="#" class="profile-icon" aria-label="Profil">
+                        <div class="profile-placeholder">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                    
+                    <!-- Modal du profil -->
+                    <div class="profile-modal" id="profile-modal">
+                        <div class="profile-modal-content">
+                            <div class="profile-section">
+                                <a href="#" class="profile-item">
+                                    <div class="profile-avatar" style="background-color: #E50914;">
+                                        <i class="fas fa-user" aria-hidden="true"></i>
+                                    </div>
+                                    <span>Adam</span>
+                                </a>
+                                <a href="#" class="profile-item">
+                                    <div class="profile-avatar" style="background-color: #2C5282;">
+                                        <i class="fas fa-user" aria-hidden="true"></i>
+                                    </div>
+                                    <span>Nolan</span>
+                                </a>
+                                <a href="#" class="profile-item">
+                                    <div class="profile-avatar" style="background-color: #38A169;">
+                                        <i class="fas fa-user" aria-hidden="true"></i>
+                                    </div>
+                                    <span>Steven</span>
+                                </a>
+                                <a href="#" class="profile-item">
+                                    <div class="profile-avatar" style="background-color: #B7791F;">
+                                        <i class="fas fa-user" aria-hidden="true"></i>
+                                    </div>
+                                    <span>Abderrazaq</span>
+                                </a>
+                                <a href="#" class="profile-item">
+                                    <div class="profile-avatar" style="background-color: #333;">
+                                        <i class="fas fa-users-cog" aria-hidden="true"></i>
+                                    </div>
+                                    <span>Gérer les profils</span>
+                                </a>
+                            </div>
+                            <div class="profile-section">
+                                <a href="#" class="profile-item">
+                                    <div class="profile-avatar" style="background-color: #555;">
+                                        <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                                    </div>
+                                    <span>Transférer le profil</span>
+                                </a>
+                                <a href="#" class="profile-item">
+                                    <div class="profile-avatar" style="background-color: #555;">
+                                        <i class="fas fa-cog" aria-hidden="true"></i>
+                                    </div>
+                                    <span>Compte</span>
+                                </a>
+                                <a href="#" class="profile-item">
+                                    <div class="profile-avatar" style="background-color: #555;">
+                                        <i class="fas fa-question-circle" aria-hidden="true"></i>
+                                    </div>
+                                    <span>Centre d'aide</span>
+                                </a>
+                            </div>
+                            <div class="profile-section">
+                                <a href="#" class="profile-item">
+                                    <div class="profile-avatar" style="background-color: transparent;">
+                                        <!-- Pas d'icône ici -->
+                                    </div>
+                                    <span>Déconnexion de StreamFlix</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- I. HERO SECTION 
+        ========================================================================== -->
+        <section class="content-hero" aria-labelledby="content-title">
+            <div class="hero-backdrop" role="img" aria-label="Image de couverture">
+                <!-- Fond dynamique chargé via CSS background -->
+            </div>
+            <div class="hero-content">
+                <div class="content-type-badge" id="content-type">Film</div>
+                <h1 id="content-title" class="content-title">Inception</h1>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary"><i class="fas fa-play" aria-hidden="true"></i> Lecture</button>
+                    <button class="btn btn-secondary add-list-btn"><i class="fas fa-plus" aria-hidden="true"></i> Ma liste</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- II. METADATA SECTION 
+        ========================================================================== -->
+        <section class="content-metadata" aria-label="Informations sur le contenu">
+            <div class="metadata-container">
+                <div class="metadata-row">
+                    <div class="metadata-rating" aria-label="Note: 8.8 sur 10">
+                        <div class="star-rating" aria-hidden="true">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-value">8.8/10</span>
+                    </div>
+                    <div class="metadata-year" aria-label="Année: 2010">2010</div>
+                    <div class="metadata-duration" aria-label="Durée: 2h 28min">2h 28min</div>
+                    <div class="metadata-quality" aria-label="Qualité: 4K">
+                        <span class="quality-badge">4K</span>
+                    </div>
+                </div>
+                <p class="content-synopsis">
+                    Dom Cobb est un voleur expérimenté, le meilleur dans l'art dangereux de l'extraction, 
+                    voler les secrets les plus intimes enfouis au plus profond du subconscient durant une 
+                    phase de rêve, lorsque l'esprit est le plus vulnérable. Les capacités de Cobb ont fait 
+                    de lui un acteur convoité dans ce nouvel univers d'espionnage industriel...
+                </p>
+            </div>
+        </section>
+
+        <!-- III. EPISODES SECTION (conditionnellement affiché pour les séries uniquement)
+        ========================================================================== -->
+        <section class="episodes-section" id="episodes-section" style="display: none;">
+            <h2 id="episodes-heading" class="section-title">Épisodes</h2>
+            
+            <div class="season-selector">
+                <label for="season-dropdown" class="visually-hidden">Sélectionnez une saison</label>
+                <select id="season-dropdown" class="season-dropdown" aria-label="Sélectionner une saison">
+                    <option value="1">Saison 1</option>
+                    <option value="2">Saison 2</option>
+                </select>
+            </div>
+            
+            <ul class="episode-list" role="list">
+                <!-- Liste d'épisodes injectée dynamiquement via JS pour les séries -->
+            </ul>
+        </section>
+
+        <!-- IV. MORE LIKE THIS SECTION 
+        ========================================================================== -->
+        <section class="more-like-this" aria-labelledby="suggestions-heading">
+            <h2 id="suggestions-heading" class="section-title">Plus de contenu similaire</h2>
+            
+            <div class="suggestions-grid">
+                <!-- Suggestion 1 -->
+                <article class="suggestion-card">
+                    <div class="suggestion-thumbnail">
+                        <img src="https://placehold.co/300x169/141414/ffffff/webp?text=Interstellar" alt="Film Interstellar">
+                    </div>
+                    <div class="suggestion-info">
+                        <h3 class="suggestion-title">Interstellar</h3>
+                        <div class="suggestion-meta">
+                            <span class="suggestion-badge">Film</span>
+                            <span class="suggestion-rating">8.6/10</span>
+                            <span class="suggestion-year">2014</span>
+                        </div>
+                        <p class="suggestion-synopsis">
+                            Dans un futur proche, la Terre est devenue hostile pour l'homme. Un groupe d'explorateurs 
+                            utilise un trou de ver pour parcourir des distances incommensurables dans l'espace.
+                        </p>
+                    </div>
+                </article>
+                
+                <!-- Suggestion 2 -->
+                <article class="suggestion-card">
+                    <div class="suggestion-thumbnail">
+                        <img src="https://placehold.co/300x169/141414/ffffff/webp?text=The+Matrix" alt="Film Matrix">
+                    </div>
+                    <div class="suggestion-info">
+                        <h3 class="suggestion-title">Matrix</h3>
+                        <div class="suggestion-meta">
+                            <span class="suggestion-badge">Film</span>
+                            <span class="suggestion-rating">8.7/10</span>
+                            <span class="suggestion-year">1999</span>
+                        </div>
+                        <p class="suggestion-synopsis">
+                            Un programmeur informatique découvre que le monde dans lequel il vit est une simulation 
+                            créée par des machines qui ont asservi l'humanité.
+                        </p>
+                    </div>
+                </article>
+                
+                <!-- Suggestion 3 (Série) -->
+                <article class="suggestion-card">
+                    <div class="suggestion-thumbnail">
+                        <img src="https://placehold.co/300x169/141414/ffffff/webp?text=Westworld" alt="Série Westworld">
+                    </div>
+                    <div class="suggestion-info">
+                        <h3 class="suggestion-title">Westworld</h3>
+                        <div class="suggestion-meta">
+                            <span class="suggestion-badge">Série</span>
+                            <span class="suggestion-rating">8.5/10</span>
+                            <span class="suggestion-year">2016</span>
+                        </div>
+                        <p class="suggestion-synopsis">
+                            Un parc d'attractions futuriste permet aux visiteurs de vivre leurs fantasmes 
+                            à travers des androïdes artificiellement intelligents.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- V. ABOUT SECTION 
+        ========================================================================== -->
+        <section class="about-section" aria-labelledby="about-heading">
+            <h2 id="about-heading" class="section-title">À propos</h2>
+            
+            <div class="about-details">
+                <div class="about-item">
+                    <span class="about-label">Réalisateur :</span>
+                    <span class="about-value">Christopher Nolan</span>
+                </div>
+                <div class="about-item">
+                    <span class="about-label">Acteurs principaux :</span>
+                    <span class="about-value">Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy</span>
+                </div>
+                <div class="about-item">
+                    <span class="about-label">Genres :</span>
+                    <span class="about-value">Science-fiction, Action, Thriller</span>
+                </div>
+                <div class="about-item">
+                    <span class="about-label">Date de sortie :</span>
+                    <span class="about-value">16 juillet 2010</span>
+                </div>
+                <div class="about-item">
+                    <span class="about-label">Pays d'origine :</span>
+                    <span class="about-value">États-Unis, Royaume-Uni</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER
+    ========================================================================== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-content">
+            <!-- Logo du site dans le footer -->
+            <div class="footer-logo">
+                <a href="#" aria-label="StreamFlix">StreamFlix</a>
+            </div>
+            
+            <!-- Liens de navigation du footer organisés en colonnes -->
+            <div class="footer-links">
+                <!-- Colonne 1: Société -->
+                <div class="footer-column">
+                    <h3>Société</h3>
+                    <ul>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Emplois</a></li>
+                        <li><a href="#">Presse</a></li>
+                        <li><a href="#">Des questions ? Contactez-nous</a></li>
+                        <li><a href="#">Informations légales</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Colonne 2: Aide -->
+                <div class="footer-column">
+                    <h3>Aide</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Comment regarder</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Colonne 3: Légal -->
+                <div class="footer-column">
+                    <h3>Légal</h3>
+                    <ul>
+                        <li><a href="#">Confidentialité</a></li>
+                        <li><a href="#">Préférences de cookies</a></li>
+                        <li><a href="#">Centre multimédia</a></li>
+                        <li><a href="#">Compte</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bas de footer: Copyright et icônes sociales -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 StreamFlix. Tous droits réservés.</p>
+                <div class="social-icons" aria-label="Réseaux sociaux">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script pour déterminer si c'est un film ou une série et afficher les sections appropriées -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulation d'API - Ceci serait normalement récupéré depuis une API
+            const contentType = "film"; // ou "serie"
+            const contentId = "inception"; // ou l'ID du contenu
+            
+            // Affiche ou masque la section des épisodes selon le type de contenu
+            const episodesSection = document.getElementById('episodes-section');
+            const contentTypeBadge = document.getElementById('content-type');
+            
+            if (contentType === "serie") {
+                episodesSection.style.display = "block";
+                contentTypeBadge.textContent = "Série";
+                // Ici, on chargerait les épisodes depuis l'API
+                loadEpisodes(contentId);
+            } else {
+                episodesSection.style.display = "none";
+                contentTypeBadge.textContent = "Film";
+            }
+            
+            // Fonction qui serait utilisée pour charger les épisodes d'une série
+            function loadEpisodes(serieId) {
+                // Simulation - Cette fonction ferait normalement un appel API
+                console.log("Chargement des épisodes pour la série ID:", serieId);
+                // Ensuite mise à jour du DOM avec les épisodes reçus
+            }
+        });
+    </script>
+</body>
+</html>

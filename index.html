@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StreamFlix</title>
+    <meta name="description" content="StreamFlix - Votre plateforme de streaming de films et séries préférée">
+    <meta name="theme-color" content="#141414">
+    <title>StreamFlix - Films et Séries en Streaming</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -29,11 +31,11 @@
                         <label for="search-toggle" class="search-close" aria-label="Fermer"><i class="fas fa-times"></i></label>
                     </form>
                 </div>
-                <a href="#" aria-label="Notifications"><i class="fas fa-bell"></i></a>
+                <a href="#" aria-label="Notifications"><i class="fas fa-bell" aria-hidden="true"></i></a>
                 <div class="profile-container">
                     <a href="#" class="profile-icon" aria-label="Profil">
                         <div class="profile-placeholder">
-                            <i class="fas fa-user"></i>
+                            <i class="fas fa-user" aria-hidden="true"></i>
                         </div>
                     </a>
                     
@@ -43,31 +45,31 @@
                             <div class="profile-section">
                                 <a href="#" class="profile-item">
                                     <div class="profile-avatar" style="background-color: #E50914;">
-                                        <i class="fas fa-user"></i>
+                                        <i class="fas fa-user" aria-hidden="true"></i>
                                     </div>
-                                    <span>Alex</span>
+                                    <span>Adam</span>
                                 </a>
                                 <a href="#" class="profile-item">
                                     <div class="profile-avatar" style="background-color: #2C5282;">
-                                        <i class="fas fa-user"></i>
+                                        <i class="fas fa-user" aria-hidden="true"></i>
                                     </div>
-                                    <span>Camille</span>
+                                    <span>Nolan</span>
                                 </a>
                                 <a href="#" class="profile-item">
                                     <div class="profile-avatar" style="background-color: #38A169;">
-                                        <i class="fas fa-user"></i>
+                                        <i class="fas fa-user" aria-hidden="true"></i>
                                     </div>
-                                    <span>Thomas</span>
+                                    <span>Steven</span>
                                 </a>
                                 <a href="#" class="profile-item">
                                     <div class="profile-avatar" style="background-color: #B7791F;">
-                                        <i class="fas fa-user"></i>
+                                        <i class="fas fa-user" aria-hidden="true"></i>
                                     </div>
-                                    <span>Julie</span>
+                                    <span>Abderrazaq</span>
                                 </a>
                                 <a href="#" class="profile-item">
                                     <div class="profile-avatar" style="background-color: #333;">
-                                        <i class="fas fa-users-cog"></i>
+                                        <i class="fas fa-users-cog" aria-hidden="true"></i>
                                     </div>
                                     <span>Gérer les profils</span>
                                 </a>
@@ -75,19 +77,19 @@
                             <div class="profile-section">
                                 <a href="#" class="profile-item">
                                     <div class="profile-avatar" style="background-color: #555;">
-                                        <i class="fas fa-exchange-alt"></i>
+                                        <i class="fas fa-exchange-alt" aria-hidden="true"></i>
                                     </div>
                                     <span>Transférer le profil</span>
                                 </a>
                                 <a href="#" class="profile-item">
                                     <div class="profile-avatar" style="background-color: #555;">
-                                        <i class="fas fa-cog"></i>
+                                        <i class="fas fa-cog" aria-hidden="true"></i>
                                     </div>
                                     <span>Compte</span>
                                 </a>
                                 <a href="#" class="profile-item">
                                     <div class="profile-avatar" style="background-color: #555;">
-                                        <i class="fas fa-question-circle"></i>
+                                        <i class="fas fa-question-circle" aria-hidden="true"></i>
                                     </div>
                                     <span>Centre d'aide</span>
                                 </a>
@@ -123,119 +125,270 @@
         </section>
 
         <!-- Section 1: Your Next Watch -->
-        <section class="movie-section">
-            <h2>Your Next Watch</h2>
-            <div class="movie-grid">
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/101010/ffffff/webp?text=Next+Watch+1" alt="Film 1">
-                </div>
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/101010/ffffff/webp?text=Next+Watch+2" alt="Film 2">
-                </div>
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/101010/ffffff/webp?text=Next+Watch+3" alt="Film 3">
-                </div>
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/101010/ffffff/webp?text=Next+Watch+4" alt="Film 4">
-                </div>
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/101010/ffffff/webp?text=Next+Watch+5" alt="Film 5">
-                </div>
+        <section class="movie-section" aria-labelledby="next-watch-heading">
+            <h2 id="next-watch-heading">Your Next Watch</h2>
+            <div class="movie-grid" role="list">
+                <!-- Film 1 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Film 1">
+                        <img src="https://placehold.co/240x135/101010/ffffff/webp?text=Next+Watch+1" alt="Film 1">
+                    </a>
+                </article>
+                
+                <!-- Film 2 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Film 2">
+                        <img src="https://placehold.co/240x135/101010/ffffff/webp?text=Next+Watch+2" alt="Film 2">
+                    </a>
+                </article>
+                
+                <!-- Film 3 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Film 3">
+                        <img src="https://placehold.co/240x135/101010/ffffff/webp?text=Next+Watch+3" alt="Film 3">
+                    </a>
+                </article>
+                
+                <!-- Film 4 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Film 4">
+                        <img src="https://placehold.co/240x135/101010/ffffff/webp?text=Next+Watch+4" alt="Film 4">
+                    </a>
+                </article>
+                
+                <!-- Film 5 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Film 5">
+                        <img src="https://placehold.co/240x135/101010/ffffff/webp?text=Next+Watch+5" alt="Film 5">
+                    </a>
+                </article>
             </div>
         </section>
         
         <!-- Section 2: New on Streamflix -->
-        <section class="movie-section">
-            <h2>New on Streamflix</h2>
-            <div class="movie-grid">
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/141414/ffffff/webp?text=New+1" alt="Film 6">
-                </div>
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/141414/ffffff/webp?text=New+2" alt="Film 7">
-                </div>
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/141414/ffffff/webp?text=New+3" alt="Film 8">
-                </div>
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/141414/ffffff/webp?text=New+4" alt="Film 9">
-                </div>
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/141414/ffffff/webp?text=New+5" alt="Film 10">
-                </div>
+        <section class="movie-section" aria-labelledby="new-heading">
+            <h2 id="new-heading">New on Streamflix</h2>
+            <div class="movie-grid" role="list">
+                <!-- Film 6 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Film 6">
+                        <img src="https://placehold.co/240x135/141414/ffffff/webp?text=New+1" alt="Film 6">
+                    </a>
+                </article>
+                
+                <!-- Film 7 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Film 7">
+                        <img src="https://placehold.co/240x135/141414/ffffff/webp?text=New+2" alt="Film 7">
+                    </a>
+                </article>
+                
+                <!-- Film 8 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Film 8">
+                        <img src="https://placehold.co/240x135/141414/ffffff/webp?text=New+3" alt="Film 8">
+                    </a>
+                </article>
+                
+                <!-- Film 9 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Film 9">
+                        <img src="https://placehold.co/240x135/141414/ffffff/webp?text=New+4" alt="Film 9">
+                    </a>
+                </article>
+                
+                <!-- Film 10 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Film 10">
+                        <img src="https://placehold.co/240x135/141414/ffffff/webp?text=New+5" alt="Film 10">
+                    </a>
+                </article>
             </div>
         </section>
         
         <!-- Section 3: Top 10 TV Shows in France Today -->
-        <section class="movie-section">
-            <h2>Top 10 TV Shows in France Today</h2>
-            <div class="top-10-grid">
-                <div class="top-10-card">
-                    <div class="top-10-number">1</div>
-                    <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+1" alt="Top Show 1">
-                </div>
-                <div class="top-10-card">
-                    <div class="top-10-number">2</div>
-                    <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+2" alt="Top Show 2">
-                </div>
-                <div class="top-10-card">
-                    <div class="top-10-number">3</div>
-                    <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+3" alt="Top Show 3">
-                </div>
-                <div class="top-10-card">
-                    <div class="top-10-number">4</div>
-                    <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+4" alt="Top Show 4">
-                </div>
-                <div class="top-10-card">
-                    <div class="top-10-number">5</div>
-                    <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+5" alt="Top Show 5">
-                </div>
-                <div class="top-10-card">
-                    <div class="top-10-number">6</div>
-                    <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+6" alt="Top Show 6">
-                </div>
-                <div class="top-10-card">
-                    <div class="top-10-number">7</div>
-                    <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+7" alt="Top Show 7">
-                </div>
-                <div class="top-10-card">
-                    <div class="top-10-number">8</div>
-                    <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+8" alt="Top Show 8">
-                </div>
-                <div class="top-10-card">
-                    <div class="top-10-number">9</div>
-                    <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+9" alt="Top Show 9">
-                </div>
-                <div class="top-10-card">
-                    <div class="top-10-number">10</div>
-                    <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+10" alt="Top Show 10">
-                </div>
+        <section class="movie-section" aria-labelledby="top-10-heading">
+            <h2 id="top-10-heading">Top 10 TV Shows in France Today</h2>
+            <div class="top-10-grid" role="list">
+                <!-- Top Show 1 -->
+                <article class="top-10-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Show 1">
+                        <div class="top-10-number" aria-hidden="true">1</div>
+                        <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+1" alt="Top Show 1">
+                    </a>
+                </article>
+                
+                <!-- Top Show 2 -->
+                <article class="top-10-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Show 2">
+                        <div class="top-10-number" aria-hidden="true">2</div>
+                        <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+2" alt="Top Show 2">
+                    </a>
+                </article>
+                
+                <!-- Top Show 3 -->
+                <article class="top-10-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Show 3">
+                        <div class="top-10-number" aria-hidden="true">3</div>
+                        <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+3" alt="Top Show 3">
+                    </a>
+                </article>
+                
+                <!-- Top Show 4 -->
+                <article class="top-10-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Show 4">
+                        <div class="top-10-number" aria-hidden="true">4</div>
+                        <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+4" alt="Top Show 4">
+                    </a>
+                </article>
+                
+                <!-- Top Show 5 -->
+                <article class="top-10-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Show 5">
+                        <div class="top-10-number" aria-hidden="true">5</div>
+                        <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+5" alt="Top Show 5">
+                    </a>
+                </article>
+                
+                <!-- Top Show 6 -->
+                <article class="top-10-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Show 6">
+                        <div class="top-10-number" aria-hidden="true">6</div>
+                        <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+6" alt="Top Show 6">
+                    </a>
+                </article>
+                
+                <!-- Top Show 7 -->
+                <article class="top-10-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Show 7">
+                        <div class="top-10-number" aria-hidden="true">7</div>
+                        <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+7" alt="Top Show 7">
+                    </a>
+                </article>
+                
+                <!-- Top Show 8 -->
+                <article class="top-10-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Show 8">
+                        <div class="top-10-number" aria-hidden="true">8</div>
+                        <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+8" alt="Top Show 8">
+                    </a>
+                </article>
+                
+                <!-- Top Show 9 -->
+                <article class="top-10-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Show 9">
+                        <div class="top-10-number" aria-hidden="true">9</div>
+                        <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+9" alt="Top Show 9">
+                    </a>
+                </article>
+                
+                <!-- Top Show 10 -->
+                <article class="top-10-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Show 10">
+                        <div class="top-10-number" aria-hidden="true">10</div>
+                        <img src="https://placehold.co/135x240/101010/ffffff/webp?text=Top+Show+10" alt="Top Show 10">
+                    </a>
+                </article>
             </div>
         </section>
         
         <!-- Section 4: Today's Top Pick for You -->
-        <section class="movie-section">
-            <h2>Today's Top Pick for You</h2>
-            <div class="movie-grid">
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/141414/ffffff/webp?text=Top+Pick+1" alt="Top Pick 1">
-                </div>
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/141414/ffffff/webp?text=Top+Pick+2" alt="Top Pick 2">
-                </div>
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/141414/ffffff/webp?text=Top+Pick+3" alt="Top Pick 3">
-                </div>
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/141414/ffffff/webp?text=Top+Pick+4" alt="Top Pick 4">
-                </div>
-                <div class="movie-card">
-                    <img src="https://placehold.co/240x135/141414/ffffff/webp?text=Top+Pick+5" alt="Top Pick 5">
-                </div>
+        <section class="movie-section" aria-labelledby="top-pick-heading">
+            <h2 id="top-pick-heading">Today's Top Pick for You</h2>
+            <div class="movie-grid" role="list">
+                <!-- Top Pick 1 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Pick 1">
+                        <img src="https://placehold.co/240x135/141414/ffffff/webp?text=Top+Pick+1" alt="Top Pick 1">
+                    </a>
+                </article>
+                
+                <!-- Top Pick 2 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Pick 2">
+                        <img src="https://placehold.co/240x135/141414/ffffff/webp?text=Top+Pick+2" alt="Top Pick 2">
+                    </a>
+                </article>
+                
+                <!-- Top Pick 3 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Pick 3">
+                        <img src="https://placehold.co/240x135/141414/ffffff/webp?text=Top+Pick+3" alt="Top Pick 3">
+                    </a>
+                </article>
+                
+                <!-- Top Pick 4 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Pick 4">
+                        <img src="https://placehold.co/240x135/141414/ffffff/webp?text=Top+Pick+4" alt="Top Pick 4">
+                    </a>
+                </article>
+                
+                <!-- Top Pick 5 -->
+                <article class="movie-card" role="listitem">
+                    <a href="#" class="movie-link" aria-label="Voir Top Pick 5">
+                        <img src="https://placehold.co/240x135/141414/ffffff/webp?text=Top+Pick+5" alt="Top Pick 5">
+                    </a>
+                </article>
             </div>
         </section>
 
     </main>
 
+    <!-- FOOTER
+    ========================================================================== -->
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-content">
+            <!-- Logo du site dans le footer -->
+            <div class="footer-logo">
+                <a href="#" aria-label="StreamFlix">StreamFlix</a>
+            </div>
+            
+            <!-- Liens de navigation du footer organisés en colonnes -->
+            <div class="footer-links">
+                <!-- Colonne 1: Société -->
+                <div class="footer-column">
+                    <h3>Société</h3>
+                    <ul>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Emplois</a></li>
+                        <li><a href="#">Presse</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Colonne 2: Aide -->
+                <div class="footer-column">
+                    <h3>Aide</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Colonne 3: Légal -->
+                <div class="footer-column">
+                    <h3>Légal</h3>
+                    <ul>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Confidentialité</a></li>
+                        <li><a href="#">Préférences de cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bas de footer: Copyright et icônes sociales -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 StreamFlix. Tous droits réservés.</p>
+                <div class="social-icons" aria-label="Réseaux sociaux">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

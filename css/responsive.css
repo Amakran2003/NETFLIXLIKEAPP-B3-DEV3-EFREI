@@ -1,0 +1,172 @@
+/*******************************************************************************
+* MEDIA QUERIES
+* Styles responsifs pour différentes tailles d'écran
+********************************************************************************/
+
+/* Tablettes et mobiles (max-width: 1024px) */
+@media (max-width: 1024px) {
+    /* Header et navigation */
+    .main-header {
+        padding: 12px 16px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+    
+    .profile-placeholder {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .profile-modal {
+        width: 280px;
+        height: 280px;
+        top: 55px;
+        right: 10px;
+    }
+    
+    /* Hero section */
+    .hero-section {
+        height: auto;
+        width: 85%;
+        margin: 80px auto 25px;
+        padding: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        aspect-ratio: 9/16;
+        background-position: center;
+        background-size: cover;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        display: block;
+        border: 2px solid #888888;
+    }
+    
+    .hero-section::before {
+        border-radius: 8px;
+    }
+    
+    .hero-content {
+        position: absolute;
+        bottom: 10%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: none;
+        padding: 25px 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%);
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+        margin: 0 auto 12px;
+        text-align: center;
+        width: 90%;
+    }
+    
+    .hero-description {
+        display: none;
+    }
+    
+    .hero-buttons {
+        margin-top: 18px;
+        justify-content: space-between;
+        width: 95%;
+        gap: 5%;
+    }
+    
+    /* Boutons */
+    .btn {
+        padding: 14px 8px;
+        font-size: 0.9rem;
+        margin: 0;
+        flex: 1;
+        min-width: 120px;
+        max-width: 47.5%;
+    }
+
+    .btn:first-child {
+        margin-right: 0;
+    }
+    
+    /* Sections de films */
+    .movie-section {
+        padding: 15px 15px;
+    }
+    
+    .movie-section h2 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .movie-grid {
+        gap: 10px;
+    }
+
+    .movie-card {
+        width: 161px;
+        height: 286px;
+    }
+
+    .movie-card:hover {
+        transform: scale(1.02);
+    }
+    
+    /* Classes de visibilité */
+    .desktop-only {
+        display: none;
+    }
+    
+    .mobile-only {
+        display: inline-block;
+    }
+    
+    /* Recherche */
+    .search-toggle:checked ~ .search-form {
+        width: 130px;
+    }
+}
+
+/* Mobiles (max-width: 768px) */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 40px 20px 20px;
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+/* Petits mobiles (max-width: 480px) */
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 30px 15px 15px;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .social-icons {
+        margin-top: 15px;
+    }
+}
