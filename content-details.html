@@ -7,8 +7,9 @@
     <meta name="theme-color" content="#141414">
     <title>Titre du contenu - StreamFlix</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/content-details.css">
     <script src="script.js" defer></script>
+    <script src="js/animations.js" defer></script>
     <script src="content-details.js" defer></script>
 </head>
 <body>
@@ -18,10 +19,10 @@
         <nav class="navbar">
             <a href="index.html" class="logo">StreamFlix</a>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="#">Séries TV</a></li>
-                <li><a href="#">Films</a></li>
-                <li><a href="#">Ma liste</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">My List</a></li>
             </ul>
             <div class="nav-icons">
                 <div class="search-container">
@@ -330,35 +331,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Script pour déterminer si c'est un film ou une série et afficher les sections appropriées -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Simulation d'API - Ceci serait normalement récupéré depuis une API
-            const contentType = "film"; // ou "serie"
-            const contentId = "inception"; // ou l'ID du contenu
-            
-            // Affiche ou masque la section des épisodes selon le type de contenu
-            const episodesSection = document.getElementById('episodes-section');
-            const contentTypeBadge = document.getElementById('content-type');
-            
-            if (contentType === "serie") {
-                episodesSection.style.display = "block";
-                contentTypeBadge.textContent = "Série";
-                // Ici, on chargerait les épisodes depuis l'API
-                loadEpisodes(contentId);
-            } else {
-                episodesSection.style.display = "none";
-                contentTypeBadge.textContent = "Film";
-            }
-            
-            // Fonction qui serait utilisée pour charger les épisodes d'une série
-            function loadEpisodes(serieId) {
-                // Simulation - Cette fonction ferait normalement un appel API
-                console.log("Chargement des épisodes pour la série ID:", serieId);
-                // Ensuite mise à jour du DOM avec les épisodes reçus
-            }
-        });
-    </script>
 </body>
 </html>
