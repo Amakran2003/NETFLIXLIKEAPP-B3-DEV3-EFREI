@@ -32,7 +32,7 @@
 }
 
 .title-logo {
-    max-width: 35%;
+    max-width: 45%;
     max-height: 100px;
     width: auto;
     height: auto;
@@ -41,8 +41,8 @@
 }
 
 .title-logo[data-ratio="wide"] {
-    max-width: 80%;
-    max-height: 100px;
+    max-width: 70%;
+    max-height: 150px;
     width: auto;
     height: auto;
 }

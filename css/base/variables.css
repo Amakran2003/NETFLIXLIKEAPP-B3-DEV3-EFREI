@@ -12,7 +12,7 @@
     --box-shadow-standard: 0 8px 20px rgba(0, 0, 0, 0.4);
     --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.6);
     --transition-standard: 0.3s ease;
-    --header-bg-transparent: rgba(0, 0, 0, 0.6);
+    --header-bg-transparent: rgba(0, 0, 0, 0);
     --header-bg-solid: rgba(0, 0, 0, 1);
 }
 

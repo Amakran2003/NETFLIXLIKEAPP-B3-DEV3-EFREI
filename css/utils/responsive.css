@@ -148,6 +148,11 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
+    .hero-title-logo {
+        max-width: 200px; /* Plus petit sur mobile */
+        max-height: 100px;
+    }
+
 }
 
 /* Petits mobiles (max-width: 480px) */
@@ -170,3 +175,5 @@
         margin-top: 15px;
     }
 }
+
+

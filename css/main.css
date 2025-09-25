@@ -1,21 +1,43 @@
 /*******************************************************************************
 * NETFLIX-LIKE APPLICATION CSS
 * Version: 1.0.0
-* Date: September 25, 2025
+* Date: September 26, 2025
 * Description: Fichier d'importation principal pour les styles
 ********************************************************************************/
 
+/* =============================================================================
+   ORDRE D'IMPORTATION:
+   1. Base (variables)
+   2. Layout (header, footer)
+   3. Components (hero, cards, modals, etc.)
+   4. Pages (home, details)
+   5. Utilities (responsive)
+   6. Composants spécialisés
+============================================================================= */
 
-/* Importation des fichiers CSS modulaires */
-@import url('css/variables.css');
-@import url('css/header.css');
-@import url('css/search.css');
-@import url('css/profile-modal.css');
-@import url('css/hero.css');
-@import url('css/movies.css');
-@import url('css/components.css');
-@import url('css/footer.css');
-@import url('css/responsive.css');
+/* 1. BASE - Variables et fondations */
+@import 'base/variables.css';
 
-/* Styles spécifiques aux pages détaillées */
-@import url('css/content-details.css');
+/* 2. LAYOUT - Structure principale */
+@import 'layout/header.css';
+@import 'layout/footer.css';
+
+/* 3. COMPONENTS - Composants réutilisables */
+@import 'components/hero.css';
+@import 'components/movie-cards.css';
+@import 'components/movie-sections.css';
+@import 'components/search.css';
+@import 'components/profile-modal.css';
+@import 'components/title-logos.css';
+@import 'components/top-10.css';
+
+/* 4. PAGES - Styles spécifiques aux pages */
+@import 'pages/home.css';
+@import 'pages/details.css';
+
+/* 5. UTILITIES - Utilitaires et responsive */
+@import 'utils/responsive.css';
+
+/* 6. COMPOSANTS GÉNÉRIQUES ET LEGACY */
+@import 'components.css';
+@import 'content-details.css';
