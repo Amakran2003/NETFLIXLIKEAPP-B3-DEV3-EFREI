@@ -1,0 +1,27 @@
+/*******************************************************************************
+* VARIABLES ET RESET
+* Variables globales et règles de base
+********************************************************************************/
+
+:root {
+    --primary-color: #e50914;
+    --bg-color-dark: #080808;
+    --text-color-light: #ffffff;
+    --text-color-muted: #b3b3b3;
+    --font-family-netflix: 'Arial Bold', 'Arial', sans-serif;
+    --box-shadow-standard: 0 8px 20px rgba(0, 0, 0, 0.4);
+    --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.6);
+    --transition-standard: 0.3s ease;
+    --header-bg-transparent: rgba(0, 0, 0, 0.6);
+    --header-bg-solid: rgba(0, 0, 0, 1);
+}
+
+body {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-light);
+    font-family: var(--font-family-netflix);
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}

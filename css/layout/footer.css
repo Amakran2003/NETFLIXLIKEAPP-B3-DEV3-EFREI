@@ -1,0 +1,102 @@
+/*******************************************************************************
+* FOOTER
+* Styles pour le pied de page du site
+********************************************************************************/
+
+/* Structure principale du footer */
+.site-footer {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-muted);
+    padding: 50px 60px 30px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Logo du footer */
+.footer-logo {
+    margin-bottom: 30px;
+}
+
+.footer-logo a {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-family: var(--font-family-netflix);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Colonnes de liens */
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: var(--text-color-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: normal;
+    transition: color var(--transition-standard);
+}
+
+.footer-column a:hover {
+    color: var(--text-color-light);
+    text-decoration: underline;
+}
+
+/* Bas du footer */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: var(--text-color-muted);
+}
+
+/* Icônes sociales */
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: var(--text-color-muted);
+    font-size: 1rem;
+    transition: color var(--transition-standard);
+}
+
+.social-icons a:hover {
+    color: var(--text-color-light);
+}
