@@ -223,7 +223,7 @@ function updateMainContent(details, type) {
     const contentTitle = document.getElementById('content-title');
     
     if (contentType) {
-        contentType.textContent = type === 'movie' ? 'Film' : 'Série';
+        contentType.textContent = type === 'movie' ? 'Movie' : 'Series'
     }
     
     if (contentTitle) {
@@ -304,7 +304,7 @@ function createSuggestionCard(item) {
         <div class="suggestion-info">
             <h3 class="suggestion-title">${item.title}</h3>
             <div class="suggestion-meta">
-                <span class="suggestion-badge">${item.type === 'movie' ? 'Film' : 'Série'}</span>
+                <span class="suggestion-badge">${item.type === 'movie' ? 'Movie' : 'Series'}</span>
                 ${item.rating ? `<span class="suggestion-rating">${item.rating}/10</span>` : ''}
                 ${item.release_year ? `<span class="suggestion-year">${item.release_year}</span>` : ''}
             </div>
