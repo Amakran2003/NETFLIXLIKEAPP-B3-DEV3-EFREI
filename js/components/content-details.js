@@ -1,5 +1,4 @@
 import API from '../api/index.js';
-import YouTubeService from '../services/youtubeService.js'; 
 
 // Variables globales pour le modal vidéo
 let videoModal;
