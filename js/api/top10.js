@@ -1,5 +1,5 @@
 import { cache, CACHE_TTL } from './config.js';
-import { fetchApi, formatContent } from './utils.js';
+import { fetchApi, formatContent } from '../utils/utils.js';
 
 // TOP 10 SHOWS : 10 séries populaires
 export async function getTop10Shows() {

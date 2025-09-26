@@ -4,7 +4,7 @@
 import { clearCache } from './config.js';
 
 // Import des fonctions utilitaires
-import { isMobileOrTablet, getImageUrl } from './utils.js';
+import { isMobileOrTablet, getImageUrl } from '../utils/utils.js';
 
 // Import des fonctions spécifiques à chaque type de contenu
 import { getHeroContent } from './hero.js';

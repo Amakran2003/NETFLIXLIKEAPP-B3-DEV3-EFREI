@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StreamFlix - Your favorite streaming platform for movies and series">
+    <meta name="theme-color" content="#141414">
+    <title>StreamFlix - Movies and Series</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title"></h1>
+                <p class="hero-description"></p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary"><i class="fas fa-play"></i> Play</button>
+                    <button class="btn btn-secondary desktop-only">More infos</button>
+                    <button class="btn btn-secondary mobile-only btn-transparent"><i class="fas fa-plus"></i> My list</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Your Next Watch -->
+        <section class="movie-section" aria-labelledby="next-watch-heading">
+            <h2 id="next-watch-heading">Your Next Watch</h2>
+            <div class="movie-grid" role="list"></div>
+        </section>
+        
+        <!-- Section 2: New on Streamflix -->
+        <section class="movie-section" aria-labelledby="new-heading">
+            <h2 id="new-heading">New on Streamflix</h2>
+            <div class="movie-grid" role="list"></div>
+        </section>
+        
+        <!-- Section 3: Top 10 TV Shows in France Today -->
+        <section class="movie-section" aria-labelledby="top-10-heading">
+            <h2 id="top-10-heading">Top 10 TV Shows in France Today</h2>
+            <div class="top-10-grid" role="list"></div>
+        </section>
+        
+        <!-- Section 4: Today's Top Pick for You -->
+        <section class="movie-section" aria-labelledby="top-pick-heading">
+            <h2 id="top-pick-heading">Today's Top Pick for You</h2>
+            <div class="movie-grid" role="list"></div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <div id="modal-profile-container"></div>
+
+    <script src="../js/animations.js" defer></script>
+    <script type="module" src="../js/movies.js"></script>
+    <script type="module">
+        import ComponentLoader from '../js/utils/componentLoader.js';
+        import '../js/components/heroSection.js';
+        import '../js/components/topPickSection.js';
+        import '../js/components/newContentSection.js';
+        import '../js/components/nextWatchSection.js';
+        import '../js/components/top10Section.js';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await ComponentLoader.loadMultipleComponents([
+                { path: './components/header.html', target: '#header-container' },
+                { path: './components/footer.html', target: '#footer-container' },
+                { path: './components/modal-profile.html', target: '#modal-profile-container' }
+            ]);
+        });
+    </script>
+</body>
+</html>

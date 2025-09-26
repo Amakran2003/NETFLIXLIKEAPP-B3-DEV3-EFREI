@@ -14,6 +14,13 @@
     --transition-standard: 0.3s ease;
     --header-bg-transparent: rgba(0, 0, 0, 0);
     --header-bg-solid: rgba(0, 0, 0, 1);
+    
+    /* Variables spécifiques à la page de détails */
+    --overlay-gradient: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.5) 100%);
+    --hero-height: 85vh;
+    --section-spacing: 50px;
+    --bg-color: #141414;
+    --accent-color: #E6A700;
 }
 
 body {

@@ -1,6 +1,6 @@
-// Solution minimale pour détecter le scroll avec CSS
 document.addEventListener('DOMContentLoaded', function() {
-    // Ajout de l'attribut data-scroll à l'élément html
+    
+    // Gestion du scroll pour le header
     document.addEventListener('scroll', function() {
         const scrollState = window.scrollY > 10 ? 'scroll' : 'top';
         document.documentElement.setAttribute('data-scroll', scrollState);
@@ -8,22 +8,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ======= GESTION DU MODAL PROFIL =======
     
-    // Éléments DOM
+    // Éléments DOM - vérifier s'ils existent
     const profileContainer = document.querySelector('.profile-container');
+    if (!profileContainer) return; // Arrêter si les éléments n'existent pas
+    
     const profileIcon = profileContainer.querySelector('.profile-icon');
     const profileModal = document.getElementById('profile-modal');
+    
+    if (!profileIcon || !profileModal) return;
     
     // Variables de contrôle
     let modalTimer = null;
     let isModalVisible = false;
-    const modalDelay = 3000; // 3 secondes avant fermeture
+    const modalDelay = 3000;
     
-    // Détection si mobile (tactile) ou desktop
+    // Détection mobile ou desktop
     const isMobile = window.matchMedia('(max-width: 768px)').matches || 
                     ('ontouchstart' in window) || 
                     (navigator.maxTouchPoints > 0);
     
-    // Fonction pour afficher le modal
+    // Afficher le modal
     function showModal() {
         clearTimeout(modalTimer);
         profileModal.style.display = 'block';
@@ -32,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         isModalVisible = true;
     }
     
-    // Fonction pour cacher le modal avec délai
+    // Cacher le modal avec délai
     function hideModalWithDelay() {
         clearTimeout(modalTimer);
         modalTimer = setTimeout(() => {
@@ -43,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, modalDelay);
     }
     
-    // Fonction pour cacher le modal immédiatement
+    // Cacher le modal immédiatement
     function hideModalImmediately() {
         clearTimeout(modalTimer);
         profileModal.style.display = 'none';
@@ -52,21 +56,20 @@ document.addEventListener('DOMContentLoaded', function() {
         isModalVisible = false;
     }
     
-    // On désactive le comportement hover CSS par défaut
+    // Désactiver le comportement hover CSS par défaut
     if (profileContainer.style) {
         profileContainer.classList.add('js-enabled');
     }
     
-    // Comportement différent selon mobile ou desktop
     if (isMobile) {
         // MOBILE: comportement au clic
         
-        // Suppression du hover CSS pour mobile
+        // Supprimer le hover CSS pour mobile
         const style = document.createElement('style');
         style.textContent = '.profile-container:hover .profile-modal { display: none; opacity: 0; visibility: hidden; }';
         document.head.appendChild(style);
         
-        // Événement toggle sur le clic de l'icône
+        // Toggle modal au clic
         profileIcon.addEventListener('click', function(e) {
             e.preventDefault();
             if (isModalVisible) {
@@ -76,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Fermer le modal quand on clique ailleurs
+        // Fermer modal en cliquant ailleurs
         document.addEventListener('click', function(e) {
             if (isModalVisible && 
                 !profileModal.contains(e.target) && 
@@ -86,30 +89,29 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     } else {
-        // DESKTOP: comportement au hover avec délai
+        // DESKTOP: comportement au hover
         
-        // Hover sur l'icône du profil -> affiche le modal
+        // Variable pour suivre la souris sur le modal
+        let isMouseOverModal = false;
+        
+        // Hover sur l'icône -> afficher modal
         profileIcon.addEventListener('mouseenter', showModal);
         
-        // Si la souris sort de l'icône -> vérifie si elle va sur le modal
+        // Quitter l'icône -> vérifier si souris sur modal
         profileIcon.addEventListener('mouseleave', function() {
-            // On vérifie si la souris est sur le modal, sinon on le cache immédiatement
             setTimeout(() => {
                 if (!isMouseOverModal) {
                     hideModalImmediately();
                 }
-            }, 50); // Petit délai technique pour laisser le temps à isMouseOverModal de se mettre à jour
+            }, 50);
         });
         
-        // Variable pour suivre si la souris est sur le modal
-        let isMouseOverModal = false;
-        
-        // Si la souris entre dans le modal -> on le note
+        // Souris entre dans le modal
         profileModal.addEventListener('mouseenter', function() {
             isMouseOverModal = true;
         });
         
-        // Si la souris quitte le modal -> on le cache immédiatement
+        // Souris quitte le modal -> cacher immédiatement
         profileModal.addEventListener('mouseleave', function() {
             isMouseOverModal = false;
             hideModalImmediately();

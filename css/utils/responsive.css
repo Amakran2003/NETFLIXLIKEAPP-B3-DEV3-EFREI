@@ -3,7 +3,7 @@
 * Styles responsifs pour différentes tailles d'écran
 ********************************************************************************/
 
-/* Tablettes et mobiles (max-width: 1024px) */
+
 @media (max-width: 1024px) {
     /* Header et navigation */
     .main-header {
@@ -63,7 +63,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%);
+        filter: drop-shadow(0px 1.5px 4px rgba(183, 183, 183, 0.677));
         box-sizing: border-box;
         margin: 0 auto;
     }
@@ -136,9 +136,18 @@
     .search-toggle:checked ~ .search-form {
         width: 130px;
     }
+
+    /* Détails */
+    .content-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content {
+        width: 80%;
+    }
 }
 
-/* Mobiles (max-width: 768px) */
+
 @media (max-width: 768px) {
     .site-footer {
         padding: 40px 20px 20px;
@@ -148,14 +157,40 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
+
+
     .hero-title-logo {
         max-width: 200px; /* Plus petit sur mobile */
         max-height: 100px;
     }
 
+
+    /* Détails */
+    :root {
+        --hero-height: 70vh;
+        --section-spacing: 40px;
+    }
+    
+    .content-title {
+        font-size: 2rem;
+    }
+    
+    .hero-content {
+        width: 90%;
+    }
+    
+    .episode-thumbnail {
+        width: 120px;
+        height: 67px;
+    }
+    
+    .about-details {
+        grid-template-columns: 1fr;
+    }
+
 }
 
-/* Petits mobiles (max-width: 480px) */
+
 @media (max-width: 480px) {
     .site-footer {
         padding: 30px 15px 15px;
@@ -174,6 +209,55 @@
     .social-icons {
         margin-top: 15px;
     }
+
+    /* Détails*/
+    :root {
+        --hero-height: 60vh;
+        --section-spacing: 30px;
+    }
+    
+    .content-title {
+        font-size: 1.8rem;
+    }
+    
+    .metadata-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .episode-item {
+        flex-direction: column;
+    }
+    
+    .episode-number {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    
+    .episode-thumbnail {
+        width: 100%;
+        height: 120px;
+        margin-right: 0;
+        margin-bottom: 15px;
+        position: relative;
+    }
+    
+    .suggestion-thumbnail {
+        height: 140px;
+    }
 }
+
+
+
+
+
+
 
 

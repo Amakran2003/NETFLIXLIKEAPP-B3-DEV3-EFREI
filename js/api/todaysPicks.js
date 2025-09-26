@@ -1,5 +1,5 @@
 import { cache, CACHE_TTL } from './config.js';
-import { fetchApi, formatContent, extractTitleLogo } from './utils.js';
+import { fetchApi, formatContent, extractTitleLogo } from '../utils/utils.js';
 
 // TODAY'S PICKS : Récupérer les recommandations du jour
 export async function getTodaysTopPicks() {

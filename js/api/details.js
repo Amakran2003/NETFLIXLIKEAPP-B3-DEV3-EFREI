@@ -1,5 +1,5 @@
 import { cache, CACHE_TTL } from './config.js';
-import { fetchApi, formatContent, getImageUrl } from './utils.js';
+import { fetchApi, formatContent, getImageUrl } from '../utils/utils.js';
 
 // Fonction pour récupérer les détails d'un contenu spécifique (film ou série)
 export async function getContentDetails(id, type) {

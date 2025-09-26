@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StreamFlix - Content Details">
+    <meta name="theme-color" content="#141414">
+    <title>Content Details - StreamFlix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="modal-profile-container"></div>
+
+    <main id="main-content">
+        <section class="content-hero" aria-labelledby="content-title">
+            <div class="hero-backdrop" role="img" aria-label="Cover image"></div>
+            <div class="hero-content">
+                <div class="content-type-badge" id="content-type">Movie</div>
+                <h1 id="content-title" class="content-title">Loading...</h1>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="play-btn">
+                        <i class="fas fa-play" aria-hidden="true"></i> Play
+                    </button>
+                    <button class="btn btn-secondary add-list-btn" id="add-list-btn">
+                        <i class="fas fa-plus" aria-hidden="true"></i> My List
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-metadata" aria-label="Content information">
+            <div class="metadata-container">
+                <div class="metadata-row">
+                    <div class="metadata-rating" aria-label="Rating">
+                        <div class="star-rating" aria-hidden="true">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-value">-/10</span>
+                    </div>
+                    <div class="metadata-year" aria-label="Year">-</div>
+                    <div class="metadata-duration" aria-label="Duration">-</div>
+                    <div class="metadata-seasons" style="display: none;" aria-label="Seasons"></div>
+                    <div class="metadata-quality" aria-label="Quality">
+                        <span class="quality-badge">HD</span>
+                    </div>
+                </div>
+                <p class="content-synopsis">Loading description...</p>
+            </div>
+        </section>
+
+        <section class="episodes-section" id="episodes-section" style="display: none;">
+            <h2 id="episodes-heading" class="section-title">Episodes</h2>
+            <div class="season-selector">
+                <label for="season-dropdown" class="visually-hidden">Select a Season</label>
+                <select id="season-dropdown" class="season-dropdown" aria-label="Select a Season">
+                    <option value="1">Season 1</option>
+                    <option value="2">Season 2</option>
+                </select>
+            </div>
+            <ul class="episode-list" role="list" id="episode-list"></ul>
+        </section>
+
+        <section class="more-like-this" aria-labelledby="suggestions-heading">
+            <h2 id="suggestions-heading" class="section-title">More Like This</h2>
+            <div class="suggestions-grid" id="suggestions-grid"></div>
+        </section>
+
+        <section class="about-section" aria-labelledby="about-heading">
+            <h2 id="about-heading" class="section-title">About</h2>
+            <div class="about-details" id="about-details"></div>
+        </section>
+    </main>
+
+    <div id="modal-video-container"></div>
+    <div id="footer-container"></div>
+
+    <script type="module" src="../js/components/content-details.js"></script>
+    <script src="../js/animations.js" defer></script>
+    <script type="module">
+        import ComponentLoader from '../js/utils/componentLoader.js';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await ComponentLoader.loadMultipleComponents([
+                { path: './components/header.html', target: '#header-container' },
+                { path: './components/footer.html', target: '#footer-container' },
+                { path: './components/modal-video.html', target: '#modal-video-container' },
+                { path: './components/modal-profile.html', target: '#modal-profile-container' }
+            ]);
+        });
+    </script>
+</body>
+</html>

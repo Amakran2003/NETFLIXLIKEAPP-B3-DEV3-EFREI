@@ -1,4 +1,4 @@
-import { API_CONFIG, cache, CACHE_TTL } from './config.js';
+import { API_CONFIG, cache, CACHE_TTL } from '../api/config.js';
 
 // Fonction pour vérifier si l'utilisateur est sur mobile/tablette
 export function isMobileOrTablet() {

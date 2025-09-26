@@ -1,0 +1,39 @@
+<header class="main-header">
+    <nav class="navbar">
+        <a href="../html/home.html" class="logo">StreamFlix</a>
+        <ul class="nav-links">
+            <li><a href="../html/home.html">Home</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">My List</a></li>
+        </ul>
+        <div class="nav-icons">
+            <div class="search-container">
+                <input type="checkbox" id="search-toggle" class="search-toggle">
+                <label for="search-toggle" class="search-btn" aria-label="Recherche">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </label>
+                <form class="search-form" id="search-form">
+                    <div class="search-icon-left">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </div>
+                    <input type="text" class="search-input" placeholder="Titre, Personne, genres" aria-label="Rechercher un film ou une série">
+                    <label for="search-toggle" class="search-close" aria-label="Fermer">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </label>
+                </form>
+            </div>
+            <a href="#" aria-label="Notifications">
+                <i class="fas fa-bell" aria-hidden="true"></i>
+            </a>
+            <div class="profile-container">
+                <a href="#" class="profile-icon" aria-label="Profil">
+                    <div class="profile-placeholder">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div id="profile-modal-container"></div>
+            </div>
+        </div>
+    </nav>
+</header>

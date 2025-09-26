@@ -1,5 +1,5 @@
 import { cache, CACHE_TTL } from './config.js';
-import { fetchApi, formatContent, extractTitleLogo } from './utils.js';
+import { fetchApi, formatContent, extractTitleLogo } from '../utils/utils.js';
 
 // NEW CONTENT : Récupérer les nouveautés films/séries
 export async function getNewContent() {

@@ -1,5 +1,5 @@
 import { cache, CACHE_TTL } from './config.js';
-import { fetchApi, formatContent } from './utils.js';
+import { fetchApi, formatContent } from '../utils/utils.js';
 
 // Fonction pour obtenir le contenu Hero (vedette)
 export async function getHeroContent() {

@@ -1,5 +1,5 @@
 import { cache, CACHE_TTL } from './config.js';
-import { fetchApi, formatContent, extractTitleLogo } from './utils.js';
+import { fetchApi, formatContent, extractTitleLogo } from '../utils/utils.js';
 
 // NEXT WATCH : Récupérer les recommandations pour l'utilisateur
 export async function getNextWatchRecommendations() {
