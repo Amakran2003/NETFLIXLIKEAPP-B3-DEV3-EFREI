@@ -13,36 +13,27 @@ export async function renderHeroSection() {
       return;
     }
     
-    // Ajouter une classe de chargement
     heroSection.classList.add('loading');
     
-    // Récupérer les données du hero depuis l'API
     const heroContent = await API.getHeroContent();
     console.log('Données du Hero chargées:', heroContent);
     
-    // Décider quelle image utiliser selon l'appareil
     const isMobile = API.isMobileOrTablet();
     const backgroundImage = isMobile ? heroContent.images.mobile : heroContent.images.desktop;
     
-    // Appliquer l'image d'arrière-plan
     heroSection.style.backgroundImage = `url(${backgroundImage})`;
-    
-    // Afficher le logo du titre ou le texte du titre
-    // Sur mobile et desktop, on utilise le logo s'il est disponible
+ 
     if (heroContent.title_logo) {
       heroTitle.innerHTML = `<img src="${heroContent.title_logo}" alt="${heroContent.title}" class="hero-title-logo">`;
     } else {
       heroTitle.textContent = heroContent.title;
     }
     
-    // Mettre à jour la description
     heroDescription.textContent = heroContent.overview;
     
-    // Retirer la classe de chargement
     heroSection.classList.remove('loading');
     heroSection.classList.add('loaded');
     
-    // Ajouter une classe pour identifier si on est sur mobile ou desktop
     if (isMobile) {
       heroSection.classList.add('hero-mobile');
     } else {
@@ -59,7 +50,6 @@ export async function renderHeroSection() {
   }
 }
 
-// Exporter la fonction de rendu
 export default {
   render: renderHeroSection
 };

@@ -3,7 +3,6 @@
 * Styles pour l'en-tête, la navbar et les éléments de navigation
 ********************************************************************************/
 
-/* Navbar principale */
 .main-header {
     width: 100%;
     position: fixed;
@@ -16,7 +15,6 @@
     box-sizing: border-box;
 }
 
-/* État du header selon le scroll */
 html:not([data-scroll='scroll']) .main-header {
     background: var(--header-bg-transparent);
     box-shadow: none;
@@ -43,7 +41,6 @@ html[data-scroll='scroll'] .main-header {
     text-decoration: none;
 }
 
-/* Liens de navigation */
 .nav-links {
     display: flex;
     list-style: none;
@@ -64,7 +61,7 @@ html[data-scroll='scroll'] .main-header {
     color: var(--text-color-muted);
 }
 
-/* Icônes de navigation */
+
 .nav-icons {
     display: flex;
     justify-content: flex-end;
@@ -83,7 +80,6 @@ html[data-scroll='scroll'] .main-header {
     text-decoration: none;
 }
 
-/* Icône du profil */
 .profile-placeholder {
     background-color: #666;
     width: 28px;

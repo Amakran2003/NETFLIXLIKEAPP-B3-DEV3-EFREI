@@ -3,7 +3,6 @@
 * Styles pour le modal profil et ses composants
 ********************************************************************************/
 
-/* Style de la modal du profil */
 .profile-container {
     position: relative;
     display: inline-block;
@@ -22,7 +21,6 @@
     visibility: visible;
 }
 
-/* Quand JavaScript est activé, on désactive le comportement hover CSS */
 .profile-container.js-enabled:hover .profile-modal {
     display: none;
     opacity: 0;
@@ -31,14 +29,24 @@
 
 .profile-modal {
     display: none;
-    position: absolute;
-    right: 0;
-    z-index: 1000;
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    z-index: 9999;
     width: 210px !important; 
     height: 470px !important; 
     background-color: rgba(0, 0, 0, 0.98);
-    margin-top: 5px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
     box-sizing: border-box;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.profile-modal.show {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .profile-modal * {
@@ -111,18 +119,21 @@
     flex: 1;
 }
 
+.profile-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 .profile-avatar {
     width: 30px;
     height: 30px;
     border-radius: 4px;
     display: flex !important;
     align-items: center !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     margin-right: 10px !important;
     padding-left: 0 !important;
     margin-left: 0 !important;
     text-align: left !important;
-    background-color: transparent !important;
 }
 
 .profile-avatar i {
@@ -143,40 +154,4 @@
     margin-left: 0 !important;
     padding-left: 0 !important;
     justify-content: flex-start !important;
-}
-
-.simple-link {
-    padding: 10px 8px;
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: normal;
-    font-family: Arial, sans-serif;
-    text-align: left;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
-    margin-left: 0;
-    box-sizing: border-box;
-    flex: 1;
-}
-
-.simple-link i {
-    margin-right: 6px;
-    font-size: 0.75rem;
-    width: 14px;
-    text-align: left;
-    flex-shrink: 0;
-}
-
-.simple-link:hover {
-    text-decoration: underline;
-}
-
-.sign-out {
-    padding: 10px 8px;
-    font-size: 0.75rem;
-    margin-left: 0;
-    text-align: left;
 }

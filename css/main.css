@@ -12,7 +12,6 @@
    3. Components (hero, cards, modals, etc.)
    4. Pages (details)
    5. Utilities (responsive)
-   6. Composants spécialisés
 ============================================================================= */
 
 /* 1. BASE - Variables et fondations */
@@ -31,8 +30,9 @@
 @import 'components/title-logos.css';
 @import 'components/top-10.css';
 
-/* 4. PAGES - Styles spécifiques aux pages */
+/* 4. PAGE DETAILS */
 @import 'pages/details.css';
+@import 'components/video-modal.css';
 
 /* 5. UTILITIES - Utilitaires et responsive */
 @import 'utils/responsive.css';

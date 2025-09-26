@@ -13,23 +13,18 @@ export async function renderTop10Section() {
       return;
     }
     
-    // Ajouter une classe de chargement
     top10Grid.classList.add('loading');
     
-    // Récupérer les données depuis l'API
     const top10Shows = await API.getTop10Shows();
     console.log('Données Top 10 chargées:', top10Shows.length, 'éléments');
     
-    // Vider le contenu actuel (placeholders)
     top10Grid.innerHTML = '';
     
-    // Générer les cartes Top 10
     top10Shows.forEach((item, index) => {
       const card = createTop10Card(item, index + 1);
       top10Grid.appendChild(card);
     });
     
-    // Retirer la classe de chargement
     top10Grid.classList.remove('loading');
     top10Grid.classList.add('loaded');
     

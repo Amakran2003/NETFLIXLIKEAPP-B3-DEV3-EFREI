@@ -28,7 +28,6 @@
     z-index: 100;
 }
 
-/* Animation d'ouverture */
 .search-toggle:checked ~ .search-form {
     width: 240px;
     opacity: 1;
@@ -93,7 +92,6 @@
     z-index: 1;
 }
 
-/* Style de la croix de fermeture */
 .search-close {
     position: absolute;
     right: 5px;
