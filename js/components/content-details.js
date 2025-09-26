@@ -328,7 +328,7 @@ function updateAboutSection(details) {
     if (details.crew) {
         const directors = details.crew.filter(person => person.job === 'Director');
         if (directors.length > 0) {
-            const directorItem = createAboutItem('Réalisateur :', directors.map(d => d.name).join(', '));
+            const directorItem = createAboutItem('Directors :', directors.map(d => d.name).join(', '));
             aboutDetails.appendChild(directorItem);
         }
     }
