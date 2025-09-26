@@ -8,9 +8,7 @@
     <title>Titre du contenu - StreamFlix</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="script.js" defer></script>
-    <script src="js/animations.js" defer></script>
-    <script src="content-details.js" defer></script>
+    <script type="module" src="js/components/content-details.js"></script>
 </head>
 <body>
     <!-- HEADER
@@ -183,62 +181,7 @@
             <h2 id="suggestions-heading" class="section-title">Plus de contenu similaire</h2>
             
             <div class="suggestions-grid">
-                <!-- Suggestion 1 -->
-                <article class="suggestion-card">
-                    <div class="suggestion-thumbnail">
-                        <img src="https://placehold.co/300x169/141414/ffffff/webp?text=Interstellar" alt="Film Interstellar">
-                    </div>
-                    <div class="suggestion-info">
-                        <h3 class="suggestion-title">Interstellar</h3>
-                        <div class="suggestion-meta">
-                            <span class="suggestion-badge">Film</span>
-                            <span class="suggestion-rating">8.6/10</span>
-                            <span class="suggestion-year">2014</span>
-                        </div>
-                        <p class="suggestion-synopsis">
-                            Dans un futur proche, la Terre est devenue hostile pour l'homme. Un groupe d'explorateurs 
-                            utilise un trou de ver pour parcourir des distances incommensurables dans l'espace.
-                        </p>
-                    </div>
-                </article>
                 
-                <!-- Suggestion 2 -->
-                <article class="suggestion-card">
-                    <div class="suggestion-thumbnail">
-                        <img src="https://placehold.co/300x169/141414/ffffff/webp?text=The+Matrix" alt="Film Matrix">
-                    </div>
-                    <div class="suggestion-info">
-                        <h3 class="suggestion-title">Matrix</h3>
-                        <div class="suggestion-meta">
-                            <span class="suggestion-badge">Film</span>
-                            <span class="suggestion-rating">8.7/10</span>
-                            <span class="suggestion-year">1999</span>
-                        </div>
-                        <p class="suggestion-synopsis">
-                            Un programmeur informatique découvre que le monde dans lequel il vit est une simulation 
-                            créée par des machines qui ont asservi l'humanité.
-                        </p>
-                    </div>
-                </article>
-                
-                <!-- Suggestion 3 (Série) -->
-                <article class="suggestion-card">
-                    <div class="suggestion-thumbnail">
-                        <img src="https://placehold.co/300x169/141414/ffffff/webp?text=Westworld" alt="Série Westworld">
-                    </div>
-                    <div class="suggestion-info">
-                        <h3 class="suggestion-title">Westworld</h3>
-                        <div class="suggestion-meta">
-                            <span class="suggestion-badge">Série</span>
-                            <span class="suggestion-rating">8.5/10</span>
-                            <span class="suggestion-year">2016</span>
-                        </div>
-                        <p class="suggestion-synopsis">
-                            Un parc d'attractions futuriste permet aux visiteurs de vivre leurs fantasmes 
-                            à travers des androïdes artificiellement intelligents.
-                        </p>
-                    </div>
-                </article>
             </div>
         </section>
 
@@ -248,29 +191,25 @@
             <h2 id="about-heading" class="section-title">À propos</h2>
             
             <div class="about-details">
-                <div class="about-item">
-                    <span class="about-label">Réalisateur :</span>
-                    <span class="about-value">Christopher Nolan</span>
-                </div>
-                <div class="about-item">
-                    <span class="about-label">Acteurs principaux :</span>
-                    <span class="about-value">Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy</span>
-                </div>
-                <div class="about-item">
-                    <span class="about-label">Genres :</span>
-                    <span class="about-value">Science-fiction, Action, Thriller</span>
-                </div>
-                <div class="about-item">
-                    <span class="about-label">Date de sortie :</span>
-                    <span class="about-value">16 juillet 2010</span>
-                </div>
-                <div class="about-item">
-                    <span class="about-label">Pays d'origine :</span>
-                    <span class="about-value">États-Unis, Royaume-Uni</span>
-                </div>
+                
             </div>
         </section>
     </main>
+
+    <!-- MODAL VIDÉO -->
+    <div class="video-modal" id="video-modal">
+        <div class="video-modal-content">
+            <button class="video-close-btn" id="video-close-btn" aria-label="Fermer la vidéo">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-container">
+                <video id="video-player" controls>
+                    <source src="" type="video/mp4">
+                    <p>Votre navigateur ne supporte pas la lecture vidéo.</p>
+                </video>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER
     ========================================================================== -->

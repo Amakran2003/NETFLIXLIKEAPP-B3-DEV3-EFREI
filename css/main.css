@@ -39,5 +39,4 @@
 @import 'utils/responsive.css';
 
 /* 6. COMPOSANTS GÉNÉRIQUES ET LEGACY */
-@import 'components.css';
 @import 'content-details.css';

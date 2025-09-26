@@ -19,3 +19,16 @@ export function clearCache(key = null) {
     cache.clear();
   }
 }
+
+// Configuration des variables d'environnement
+const CONFIG = {
+    YOUTUBE_API_KEY: 'AIzaSyA332K32BqVJZWT36gtL4GuHlbzNAtbs_o', // En développement
+    YOUTUBE_API_BASE_URL: 'https://www.googleapis.com/youtube/v3'
+};
+
+// En production, vous pourriez charger depuis process.env
+// if (typeof process !== 'undefined' && process.env) {
+//     CONFIG.YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY || CONFIG.YOUTUBE_API_KEY;
+// }
+
+export default CONFIG;
