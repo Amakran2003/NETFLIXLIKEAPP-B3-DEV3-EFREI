@@ -335,7 +335,7 @@ function updateAboutSection(details) {
     
     if (details.cast && details.cast.length > 0) {
         const actors = details.cast.slice(0, 4).map(actor => actor.name).join(', ');
-        const castItem = createAboutItem('Acteurs principaux :', actors);
+        const castItem = createAboutItem('Main actors :', actors);
         aboutDetails.appendChild(castItem);
     }
     
@@ -345,7 +345,7 @@ function updateAboutSection(details) {
     }
     
     if (details.release_year) {
-        const releaseItem = createAboutItem('Année de sortie :', details.release_year.toString());
+        const releaseItem = createAboutItem('Release date :', details.release_year.toString());
         aboutDetails.appendChild(releaseItem);
     }
 }
