@@ -5,7 +5,7 @@
 
 .hero-section {
     height: 75vh;
-    background: url('https://placehold.co/1920x1080/080808/333333/webp?text=Hero+Background') no-repeat center center/cover;
+    background: no-repeat center center/cover;
     position: relative;
     display: flex;
     align-items: flex-end;
